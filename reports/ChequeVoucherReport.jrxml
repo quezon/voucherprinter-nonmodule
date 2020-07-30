@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ChequeVoucherReport" pageWidth="612" pageHeight="396" orientation="Landscape" whenNoDataType="NoPages" columnWidth="356" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="18ee4cab-4700-4688-9ed6-505f1cf60a88">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ChequeVoucherDS"/>
+	<property name="com.jaspersoft.studio.unit." value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="inch"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:/Users/vorga/Documents/254/voucher-service/reports/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ParticularsParam" class="net.sf.jasperreports.engine.JasperReport" isForPrompting="false"/>
+	<parameter name="AccountsParam" class="net.sf.jasperreports.engine.JasperReport" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="dateCreated" class="java.time.LocalDate">
+		<fieldDescription><![CDATA[dateCreated]]></fieldDescription>
+	</field>
+	<field name="certifiedBy" class="java.lang.String">
+		<fieldDescription><![CDATA[certifiedBy]]></fieldDescription>
+	</field>
+	<field name="payee" class="com.gic.db1.model.Payee">
+		<fieldDescription><![CDATA[payee]]></fieldDescription>
+	</field>
+	<field name="preparedBy" class="java.lang.String">
+		<fieldDescription><![CDATA[preparedBy]]></fieldDescription>
+	</field>
+	<field name="approvedBy" class="java.lang.String">
+		<fieldDescription><![CDATA[approvedBy]]></fieldDescription>
+	</field>
+	<field name="receivedBy" class="java.lang.String">
+		<fieldDescription><![CDATA[receivedBy]]></fieldDescription>
+	</field>
+	<field name="receivedFrom" class="java.lang.String">
+		<fieldDescription><![CDATA[receivedFrom]]></fieldDescription>
+	</field>
+	<field name="totalCredits" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalCredits]]></fieldDescription>
+	</field>
+	<field name="totalCreditsInWords" class="java.lang.String">
+		<fieldDescription><![CDATA[totalCreditsInWords]]></fieldDescription>
+	</field>
+	<field name="accounts" class="java.util.List">
+		<fieldDescription><![CDATA[accounts]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="particulars" class="java.util.List">
+		<fieldDescription><![CDATA[particulars]]></fieldDescription>
+	</field>
+	<field name="payeeName" class="java.lang.String">
+		<fieldDescription><![CDATA[payeeName]]></fieldDescription>
+	</field>
+	<field name="currencyValue" class="java.lang.String">
+		<fieldDescription><![CDATA[currencyValue]]></fieldDescription>
+	</field>
+	<field name="dateCreatedFormatted" class="java.lang.String">
+		<fieldDescription><![CDATA[dateCreatedFormatted]]></fieldDescription>
+	</field>
+	<field name="idFormatted" class="java.lang.String">
+		<fieldDescription><![CDATA[idFormatted]]></fieldDescription>
+	</field>
+	<field name="chequeNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[chequeNumber]]></fieldDescription>
+	</field>
+	<field name="chequeBank" class="java.lang.String">
+		<fieldDescription><![CDATA[chequeBank]]></fieldDescription>
+	</field>
+	<field name="currency" class="com.gic.db2.model.Currency">
+		<fieldDescription><![CDATA[currency]]></fieldDescription>
+	</field>
+	<title>
+		<band height="63" splitType="Stretch">
+			<rectangle>
+				<reportElement x="50" y="13" width="231" height="43" uuid="5a19dc4a-7cf1-4862-b92e-f4c6f00ab7aa"/>
+			</rectangle>
+			<textField>
+				<reportElement x="56" y="16" width="100" height="16" uuid="009ee9c6-2f1c-4e87-a19b-ef7a3afa2aa6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payeeName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-8" y="16" width="51" height="30" uuid="e808cf36-dcc7-436f-83d1-c133cb386ea7"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payee]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-9" y="-20" width="178" height="30" uuid="91e3fbcf-8d05-487c-98cd-920340ae35c7"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cheque Voucher]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="16" width="102" height="16" uuid="6cf49f02-7e26-446a-b753-abcf2983373b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Voucher Number:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="402" y="33" width="138" height="1" uuid="19953682-feb1-4469-9450-d236b7c03884"/>
+			</line>
+			<textField>
+				<reportElement x="412" y="13" width="135" height="19" uuid="73eeea9e-4bcf-4594-a430-097e0ba1b594"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{idFormatted}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="312" y="38" width="50" height="18" uuid="7c1f88fd-af7b-454a-8cd0-520f5e22fac3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="403" y="58" width="138" height="1" uuid="52664101-2428-4687-a1d0-921c9f876291"/>
+			</line>
+			<textField pattern="MMMM d, yyyy">
+				<reportElement x="412" y="37" width="137" height="21" uuid="d75b2936-1609-42fc-8860-9e4997c7fb5f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dateCreatedFormatted}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="310" y="-3" width="89" height="16" uuid="c374c114-65fb-48cc-b45a-7d6ca6b3c5f6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Check number:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="404" y="13" width="138" height="1" uuid="e4be4eec-b820-4d52-9a4f-40f5ad37a342"/>
+			</line>
+			<textField>
+				<reportElement x="412" y="-2" width="100" height="14" uuid="50b0e2f5-90b9-4fc9-acf0-76d443e0a242"/>
+				<textFieldExpression><![CDATA[$F{chequeNumber}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="97">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement positionType="Float" x="-8" y="3" width="564" height="90" uuid="5082f983-9b2f-4b88-88bc-fe087de56603"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{particulars})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ParticularsReport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="114">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement positionType="Float" x="-6" y="4" width="269" height="86" uuid="650d997d-5516-4b32-ba27-faa16083298b"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{accounts})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "AccountsReport.jasper"]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement x="293" y="4" width="264" height="106" uuid="80aa9264-3f35-4e57-b881-9eb547bb7772"/>
+				<staticText>
+					<reportElement x="0" y="0" width="120" height="17" uuid="1c9ba7c4-f102-430a-9442-8a4454938cba"/>
+					<textElement>
+						<font size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Amount in Words]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="42" width="44" height="17" uuid="2e4ff3dd-ade9-4065-9930-ee92b3db1dfc"/>
+					<textElement>
+						<font size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Bank]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="8" y="19" width="256" height="20" uuid="bf9719ba-ee7f-43f2-ba5a-244f1385509b"/>
+					<textFieldExpression><![CDATA[$F{currencyValue} + "  " +$F{totalCreditsInWords}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="63" width="164" height="17" uuid="ed85f673-7190-470c-ad95-077577ebfd19"/>
+					<textElement>
+						<font size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Received Payment by]]></text>
+				</staticText>
+				<line>
+					<reportElement x="1" y="101" width="263" height="1" uuid="4cf81c0f-e2e3-43c8-97ce-096824d86364"/>
+				</line>
+				<textField>
+					<reportElement x="50" y="42" width="100" height="18" uuid="abe53481-2432-4cad-bc96-e3d9923d04b4"/>
+					<textFieldExpression><![CDATA[$F{chequeBank}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="61">
+			<staticText>
+				<reportElement x="-9" y="5" width="89" height="17" uuid="0dd5b85f-7f41-45a2-b980-f7538e5eee69"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prepared by]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="5" width="89" height="17" uuid="e1d9e25e-a401-4871-948a-2733fe48dc92"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Approved by]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="5" width="123" height="17" uuid="0105adaa-a583-408c-9c53-6bbbb00389b4"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Certified Correct by]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-9" y="56" width="120" height="1" uuid="2b4831f0-90c2-478f-96fd-c84c407a49cb"/>
+			</line>
+			<line>
+				<reportElement x="156" y="56" width="120" height="1" uuid="e328fc00-0deb-4ace-ab9e-d78b0e6d0d37"/>
+			</line>
+			<line>
+				<reportElement x="361" y="56" width="120" height="1" uuid="7b5835ad-6669-402e-8d83-ec6cde892ad6"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="371" y="40" width="100" height="14" uuid="7a5d5286-8a75-40b2-a0d1-50928b7d2743"/>
+				<textFieldExpression><![CDATA[$F{approvedBy}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="166" y="40" width="100" height="14" uuid="ca715037-0e90-458b-8cd9-e9fb727dad4a"/>
+				<textFieldExpression><![CDATA[$F{certifiedBy}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="5" y="40" width="80" height="14" uuid="388eda42-7eb2-447b-a19e-11a599386b8c"/>
+				<textFieldExpression><![CDATA[$F{preparedBy}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AccountsReport" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="792" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="cec35026-9865-4a33-9a2f-46c76a3d893f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[amount]]></fieldDescription>
+	</field>
+	<field name="chartOfAccountsNumber" class="java.lang.Integer">
+		<fieldDescription><![CDATA[chartOfAccountsNumber]]></fieldDescription>
+	</field>
+	<field name="normally" class="java.lang.String">
+		<fieldDescription><![CDATA[normally]]></fieldDescription>
+	</field>
+	<field name="chartOfAccountsName" class="java.lang.String"/>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="3" width="54" height="17" uuid="d5808fca-f9dc-4d7b-860f-f8451bc761e7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ccbd49e2-e38b-4be1-9c35-240c4baf34c8"/>
+				</reportElement>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACCOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="3" width="44" height="17" uuid="795328ad-22cc-4d86-b73a-56ae8f4e167f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7899b18-e6eb-4b9e-902b-e9e6b7e09120"/>
+				</reportElement>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEBIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="3" width="45" height="17" uuid="081594cc-882d-4184-87f8-a906ad619875">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7899b18-e6eb-4b9e-902b-e9e6b7e09120"/>
+				</reportElement>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREDIT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="6" y="3" width="102" height="14" uuid="b06a910e-93e4-47fc-a308-c778a1e59fe2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ccbd49e2-e38b-4be1-9c35-240c4baf34c8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{chartOfAccountsName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="3" width="98" height="14" uuid="fc7e5883-2972-49af-bd0f-f728a9ef8da5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{normally}.equals("debit") ? new java.text.DecimalFormat("#,##0.00").format($F{amount}) : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="3" width="90" height="14" uuid="a017f26c-7f74-4bd3-9380-17b7e857b0fd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7899b18-e6eb-4b9e-902b-e9e6b7e09120"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{normally}.equals("credit") ? new java.text.DecimalFormat("#,##0.00").format($F{amount}) : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

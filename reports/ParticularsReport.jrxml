@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ParticularsReport" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7c390a93-f78c-42ba-a9eb-38f9e5cee140">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[amount]]></fieldDescription>
+	</field>
+	<field name="docReferred" class="java.lang.String">
+		<fieldDescription><![CDATA[docReferred]]></fieldDescription>
+	</field>
+	<field name="docNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[docNumber]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[description]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<variable name="total_particulars" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<pageHeader>
+		<band height="23"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="81" y="5" width="38" height="16" uuid="d4e1b5a7-868f-461c-93c0-305ea9a30c55">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f6b6847e-9848-45d6-950a-0d4caf18be6a"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ref #]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="4" width="210" height="17" uuid="1313369b-e9ca-4c51-9bd4-82bd5e5be2cf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7703c6bd-1462-4a79-bead-571dbc91ac55"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="4" width="80" height="17" uuid="3ca2f3f0-e660-467b-8b24-ba51fe66c81d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3d629380-9195-4f20-95c8-aa10c79e95a3"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="5" width="52" height="16" uuid="b7dc7a65-9806-4110-bb5f-71dbac84142e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="77510ecf-227e-4b28-abbf-538b5ba5968c"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Document Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="-22" width="110" height="20" uuid="7dd614bd-256a-42fc-bf00-7806592d84b7"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PARTICULARS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19">
+			<textField>
+				<reportElement x="19" y="2" width="31" height="16" uuid="1d054bb0-472b-4180-8795-f766fb39279a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="714e0e55-7d93-47e8-ab14-26cc63c3acaa"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="2" width="80" height="15" uuid="bce56ce9-5479-44f4-9566-dccd773e5de5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="010c6de8-4bdf-40a1-aa7b-ed206977b3d3"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{amount})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="2" width="210" height="16" uuid="45055c3c-deb0-43fc-ac52-ee31e357e9c5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a590057-bea4-46f2-b6eb-7bdd3439bae4"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="2" width="100" height="16" uuid="cb5f4e59-4f4c-4189-8f98-940d69054d1c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="33750e26-199b-425e-b8e8-ef1edc9a1185"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{docReferred}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="56" y="2" width="89" height="15" uuid="13e6af4d-d62e-48f5-ac62-ce6dfdbdaa11">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f1d4c1e-0e0a-4a1a-99bf-a5c248204deb"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{docNumber}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="21">
+			<staticText>
+				<reportElement x="369" y="3" width="100" height="15" uuid="50083d36-bc8a-4ec1-8b2e-b1ced57fe727">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3d629380-9195-4f20-95c8-aa10c79e95a3"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="476" y="2" width="80" height="17" uuid="5fe3dc79-99aa-4984-a1b9-93433797813b"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{total_particulars})]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>
